@@ -43,6 +43,8 @@ int main(){
         if(v1[i] > n)
             break;
         long long temp = i+1;
+        // upper_bound() returns an iterator pointing to the first element in the range [first, last) which is greater than value, or last if we do not find such element
+        // here it is represented as (v2.begin(), v2.end()) which returns an iterator through the whole array, and third argument is the value to be searched 
         temp += upper_bound(v2.begin(),v2.end(),n - v1[i]) - v2.begin();
         ans = max(temp,ans);
     }
